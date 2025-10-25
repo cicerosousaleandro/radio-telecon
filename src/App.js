@@ -49,6 +49,21 @@ function App() {
             className="space-y-4 text-gray-300 max-w-none"
             dangerouslySetInnerHTML={{ __html: primeiroPost.content }}
           />
+
+          {/* ✅ Link para o currículo — adicionado aqui */}
+          <div className="mt-10 pt-6 border-t border-gray-700">
+            <a
+              href="https://apresentacao-coral.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition shadow hover:shadow-blue-500/20"
+            >
+              📄 Acesse meu currículo profissional
+            </a>
+            <p className="mt-3 text-sm text-gray-500">
+              Saiba mais sobre minha trajetória em redes e segurança da informação.
+            </p>
+          </div>
         </article>
       </main>
 
@@ -59,5 +74,4 @@ function App() {
   );
 }
 
-// ✅ EXPORTAÇÃO FORA DA FUNÇÃO, NO FINAL DO ARQUIVO
 export default App;

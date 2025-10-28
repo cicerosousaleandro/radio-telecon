@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#0d1117] text-gray-200 flex flex-col md:flex-row">
-      {/* Overlay escuro (só em mobile) */}
+      {/* Overlay escuro (só em mobile, quando sidebar aberta) */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -66,10 +66,12 @@ function App() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl">
+      <main className={`flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl ${sidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>
         {/* Cabeçalho com botão hamburguer (só em mobile) */}
         <header className="md:hidden mb-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-400">Rádio.Telecon</h1>
+          <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
+  Rádio.Telecon
+</Link>
           <button
             onClick={() => setSidebarOpen(true)}
             className="text-blue-400 text-2xl focus:outline-none"

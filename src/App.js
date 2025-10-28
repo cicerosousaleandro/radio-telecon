@@ -1,8 +1,9 @@
 // src/App.js
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const posts = [
     {
       id: 1,
@@ -19,29 +20,65 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0d1117] text-gray-200 flex">
+    <div className="min-h-screen bg-[#0d1117] text-gray-200 flex flex-col md:flex-row">
+      {/* Overlay escuro (só em mobile) */}
+      {sidebarOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+          onClick={() => setSidebarOpen(false)}
+        ></div>
+      )}
+
       {/* Sidebar */}
-      <aside className="w-64 bg-[#161b22] border-r border-gray-700 p-6">
-        <h2 className="text-xl font-bold text-blue-400 mb-6">Rádio.Telecon</h2>
-        <p className="text-sm text-gray-400 mb-8">Conteúdos sobre Redes de Computadores e Segurança da Informação</p>
+      <aside
+        className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-[#161b22] border-r border-gray-700 p-6 transform transition-transform duration-300 ease-in-out
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
+          md:translate-x-0`}
+      >
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-xl font-bold text-blue-400">Rádio.Telecon</h2>
+          <button
+            onClick={() => setSidebarOpen(false)}
+            className="md:hidden text-gray-400 hover:text-white text-xl"
+            aria-label="Fechar menu"
+          >
+            &times;
+          </button>
+        </div>
+        <p className="text-sm text-gray-400 mb-8 hidden md:block">
+          Conteúdos sobre Redes de Computadores e Segurança da Informação
+        </p>
 
         <h3 className="text-lg font-semibold text-blue-300 mb-4">Últimas Publicações</h3>
-        <div className="space-y-4">
+        <div className="space-y-3">
           {posts.map(post => (
             <Link
               key={post.id}
               to={`/post/${post.id}`}
-              className="block p-3 rounded-lg bg-[#0d1117] hover:bg-[#161b22] border border-gray-700 transition"
+              onClick={() => setSidebarOpen(false)}
+              className="block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm"
             >
-              <h4 className="text-sm font-medium text-blue-400">{post.title}</h4>
-              <p className="text-xs text-gray-500 mt-1">{post.date}</p>
+              <h4 className="font-medium text-blue-400 truncate">{post.title}</h4>
+              <p className="text-xs text-gray-500 mt-1 md:hidden">{post.date}</p>
             </Link>
           ))}
         </div>
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 container mx-auto px-6 py-8 max-w-4xl">
+      <main className="flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl">
+        {/* Cabeçalho com botão hamburguer (só em mobile) */}
+        <header className="md:hidden mb-6 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-blue-400">Rádio.Telecon</h1>
+          <button
+            onClick={() => setSidebarOpen(true)}
+            className="text-blue-400 text-2xl focus:outline-none"
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+        </header>
+
         {/* Banner com fotos antigas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="rounded-lg overflow-hidden border border-gray-700">

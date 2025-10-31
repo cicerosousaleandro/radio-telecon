@@ -1,17 +1,15 @@
 // src/pages/PostPage.js
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom"; // ✅ Adicionado Link
+import { Link, useParams } from "react-router-dom";
 import { primeiroPost } from "../posts/primeiro-post";
 import { segundoPost } from "../posts/segundo-post";
 
 export default function PostPage() {
-  // ✅ useState SEMPRE no topo — antes de qualquer lógica condicional
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const { id } = useParams();
   const postId = parseInt(id, 10);
 
-  // Carrega o post correto
   let post;
   let image1, image2;
   if (postId === 1) {
@@ -23,7 +21,6 @@ export default function PostPage() {
     image1 = require("../assets/mikrotik1.jpg");
     image2 = require("../assets/mikrotik2.jpg");
   } else {
-    // Renderiza erro SEM hooks depois
     return (
       <div className="min-h-screen bg-[#0d1117] text-gray-200 flex items-center justify-center">
         <p className="text-xl text-gray-400">Post não encontrado.</p>
@@ -31,10 +28,8 @@ export default function PostPage() {
     );
   }
 
-  // ✅ O restante do JSX só é renderizado se o post for válido
   return (
     <div className="min-h-screen bg-[#0d1117] text-gray-200 flex flex-col md:flex-row">
-      {/* Overlay escuro (só em mobile, quando sidebar aberta) */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -42,14 +37,16 @@ export default function PostPage() {
         ></div>
       )}
 
-      {/* Sidebar */}
       <aside
         className={`fixed md:static inset-y-0 left-0 z-50 w-64 bg-[#161b22] border-r border-gray-700 p-6 transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           md:translate-x-0`}
       >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-bold text-blue-400">Rádio.Telecon</h2>
+          {/* ✅ CORREÇÃO AQUI: h2 → Link */}
+          <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
+            Rádio.Telecon
+          </Link>
           <button
             onClick={() => setSidebarOpen(false)}
             className="md:hidden text-gray-400 hover:text-white text-xl"
@@ -80,11 +77,8 @@ export default function PostPage() {
         </div>
       </aside>
 
-      {/* Main content */}
       <main className={`flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl ${sidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>
-        {/* Cabeçalho com botão hamburguer (só em mobile) */}
         <header className="md:hidden mb-6 flex justify-between items-center">
-          {/* ✅ Substituição: h1 → Link */}
           <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
             Rádio.Telecon
           </Link>
@@ -97,7 +91,6 @@ export default function PostPage() {
           </button>
         </header>
 
-        {/* Imagens lado a lado */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <div className="rounded-lg overflow-hidden border border-gray-700">
             <img

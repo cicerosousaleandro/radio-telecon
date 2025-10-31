@@ -36,7 +36,10 @@ function App() {
           md:translate-x-0`}
       >
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-bold text-blue-400">Rádio.Telecon</h2>
+          {/* ✅ CORREÇÃO AQUI: h2 → Link */}
+          <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
+            Rádio.Telecon
+          </Link>
           <button
             onClick={() => setSidebarOpen(false)}
             className="md:hidden text-gray-400 hover:text-white text-xl"
@@ -70,8 +73,8 @@ function App() {
         {/* Cabeçalho com botão hamburguer (só em mobile) */}
         <header className="md:hidden mb-6 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
-  Rádio.Telecon
-</Link>
+            Rádio.Telecon
+          </Link>
           <button
             onClick={() => setSidebarOpen(true)}
             className="text-blue-400 text-2xl focus:outline-none"

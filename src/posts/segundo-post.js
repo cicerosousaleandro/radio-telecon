@@ -3,6 +3,9 @@ export const segundoPost = {
   id: 2,
   title: "MikroTik RB750Gr3: Um roteador robusto que cabe no bolso — e no seu rack",
   date: "28 de outubro de 2025",
+  // Adicione os nomes das imagens
+  image1: "mikrotik1.jpg",
+  image2: "mikrotik2.jpg",
   content: `
     <p>Para quem trabalha com redes — seja em pequenas empresas, provedores locais ou ambientes corporativos — o <strong>MikroTik RB750Gr3</strong> é uma das opções mais equilibradas do mercado. Com um preço em torno de <strong>R$ 600</strong> (em 2025), ele entrega desempenho, confiabilidade e um conjunto de funcionalidades raramente encontrado nessa faixa de custo.</p>
 
@@ -41,8 +44,21 @@ export const segundoPost = {
 
     <p>E, como roda o RouterOS completo, ele também serve como <strong>plataforma de aprendizado</strong> para quem quer dominar MikroTik antes de migrar para modelos mais avançados.</p>
 
+    <h2>Onde encontrar ferramentas oficiais?</h2>
+    <p>Todas as ferramentas, atualizações e documentação oficiais da MikroTik estão disponíveis no site da fabricante: 
+    <a href="https://mikrotik.com/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
+      https://mikrotik.com/
+    </a>.</p>
+    <p>Na seção <strong>Download</strong>, você encontra:</p>
+    <ul>
+      <li><strong>WinBox</strong>: a interface gráfica oficial para configuração de roteadores MikroTik (disponível para Windows e macOS via Wine)</li>
+      <li><strong>Firmwares atualizados</strong>: versões estáveis e de teste do RouterOS para todos os modelos</li>
+      <li><strong>Documentação técnica</strong>, manuais, guias de instalação e recursos para desenvolvedores</li>
+    </ul>
+    <p>Manter seu equipamento com firmware atualizado e usar ferramentas oficiais é essencial para garantir segurança, estabilidade e acesso às últimas funcionalidades.</p>
+
     <p class="text-right mt-8 italic text-gray-400">
-      📻 <strong>Rádio.Telecon</strong> — Conteúdo técnico.
+      📻 <strong>Rádio.Telecon</strong> — Conteúdo técnico, sem firulas, feito por quem entende de redes e segurança.
     </p>
   `
 };

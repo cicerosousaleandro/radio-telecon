@@ -6,16 +6,22 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const posts = [
     {
-      id: 1,
-      title: "Quando a Nuvem Cai: A História de Como a AWS Parou o Mundo — Duas Vezes",
-      date: "22 de outubro de 2025",
-      excerpt: "Do apagão de 2017 ao colapso de 2025: lições de infraestrutura que todo profissional deve conhecer."
+      id: 3,
+      title: "IPv6: A Internet Precisou Crescer de Novo — e Foi Além do Imaginável",
+      date: "10 de novembro de 2025",
+      excerpt: "Como o esgotamento do IPv4 levou ao NAT — e por que o IPv6 está devolvendo simplicidade à rede mundial."
     },
     {
       id: 2,
       title: "MikroTik RB750Gr3: Um roteador robusto que cabe no bolso — e no seu rack",
       date: "28 de outubro de 2025",
       excerpt: "Firewall, failover, controle por MAC e mais: o que esse roteador de R$ 600 pode fazer pela sua rede."
+    },
+    {
+      id: 1,
+      title: "Quando a Nuvem Cai: A História de Como a AWS Parou o Mundo — Duas Vezes",
+      date: "22 de outubro de 2025",
+      excerpt: "Do apagão de 2017 ao colapso de 2025: lições de infraestrutura que todo profissional deve conhecer."
     }
   ];
 
@@ -36,7 +42,6 @@ function App() {
           md:translate-x-0`}
       >
         <div className="flex justify-between items-center mb-6">
-          {/* ✅ CORREÇÃO AQUI: h2 → Link */}
           <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
             Rádio.Telecon
           </Link>

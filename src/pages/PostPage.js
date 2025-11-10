@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { primeiroPost } from "../posts/primeiro-post";
 import { segundoPost } from "../posts/segundo-post";
+import { terceiroPost } from "../posts/terceiro-post";
 
 export default function PostPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -20,6 +21,10 @@ export default function PostPage() {
     post = segundoPost;
     image1 = require("../assets/mikrotik1.jpg");
     image2 = require("../assets/mikrotik2.jpg");
+  } else if (postId === 3) {
+    post = terceiroPost;
+    image1 = require("../assets/ipv6-structure.jpg");
+    image2 = require("../assets/submarine-cable.jpg");
   } else {
     return (
       <div className="min-h-screen bg-[#0d1117] text-gray-200 flex items-center justify-center">
@@ -43,7 +48,6 @@ export default function PostPage() {
           md:translate-x-0`}
       >
         <div className="flex justify-between items-center mb-6">
-          {/* ✅ CORREÇÃO AQUI: h2 → Link */}
           <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
             Rádio.Telecon
           </Link>
@@ -61,7 +65,7 @@ export default function PostPage() {
 
         <h3 className="text-lg font-semibold text-blue-300 mb-4">Últimas Publicações</h3>
         <div className="space-y-3">
-          {[primeiroPost, segundoPost].map(p => (
+          {[primeiroPost, segundoPost, terceiroPost].map(p => (
             <a
               key={p.id}
               href={`/post/${p.id}`}
@@ -99,7 +103,11 @@ export default function PostPage() {
               className="w-full h-auto object-cover"
             />
             <p className="text-xs text-gray-500 text-center mt-2">
-              {postId === 1 ? "A nuvem: invisível, mas essencial." : "MikroTik RB750Gr3 — frente"}
+              {postId === 1
+                ? "A nuvem: invisível, mas essencial."
+                : postId === 2
+                ? "MikroTik RB750Gr3 — frente"
+                : "IPv6: estrutura de endereçamento"}
             </p>
           </div>
           <div className="rounded-lg overflow-hidden border border-gray-700">
@@ -109,7 +117,11 @@ export default function PostPage() {
               className="w-full h-auto object-cover"
             />
             <p className="text-xs text-gray-500 text-center mt-2">
-              {postId === 1 ? "Onde a nuvem realmente vive." : "MikroTik RB750Gr3 — traseira"}
+              {postId === 1
+                ? "Onde a nuvem realmente vive."
+                : postId === 2
+                ? "MikroTik RB750Gr3 — traseira"
+                : "Cabo submarino: espinha dorsal da internet"}
             </p>
           </div>
         </div>

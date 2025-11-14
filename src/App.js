@@ -71,6 +71,21 @@ function App() {
             </Link>
           ))}
         </div>
+
+        {/* --- NOVO: Link para o Gerador de Senhas --- */}
+        <div className="mt-6 pt-4 border-t border-gray-700">
+          <a
+            href="https://gerador-de-senha-pi-ruby.vercel.app/"
+            target="_blank" // Abre em nova aba
+            rel="noopener noreferrer" // Segurança para links externos
+            className="block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm text-blue-400 font-medium"
+            onClick={() => setSidebarOpen(false)} // Fecha sidebar em mobile
+          >
+            🔐 Gerador de Senhas Fortes
+          </a>
+        </div>
+        {/* --- FIM NOVO --- */}
+
       </aside>
 
       {/* Main content */}

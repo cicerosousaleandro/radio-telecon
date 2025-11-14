@@ -68,7 +68,7 @@ export default function PostPage() {
           {[primeiroPost, segundoPost, terceiroPost].map(p => (
             <a
               key={p.id}
-              href={`/post/${p.id}`}
+              href={`/post/${p.id}`} // Usando href em vez de to, talvez Link funcione também
               onClick={() => setSidebarOpen(false)}
               className={`block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm ${
                 p.id === postId ? 'bg-blue-700' : ''
@@ -79,6 +79,21 @@ export default function PostPage() {
             </a>
           ))}
         </div>
+
+        {/* --- NOVO: Link para o Gerador de Senhas --- */}
+        <div className="mt-6 pt-4 border-t border-gray-700">
+          <a
+            href="https://gerador-de-senha-pi-ruby.vercel.app/"
+            target="_blank" // Abre em nova aba
+            rel="noopener noreferrer" // Segurança para links externos
+            className="block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm text-blue-400 font-medium"
+            onClick={() => setSidebarOpen(false)} // Fecha sidebar em mobile
+          >
+            🔐 Gerador de Senhas Fortes
+          </a>
+        </div>
+        {/* --- FIM NOVO --- */}
+
       </aside>
 
       <main className={`flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl ${sidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>

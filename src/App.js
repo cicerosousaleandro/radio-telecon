@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Certifique-se que Link está importado
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -72,19 +72,17 @@ function App() {
           ))}
         </div>
 
-        {/* --- NOVO: Link para o Gerador de Senhas --- */}
+        {/* --- ATUALIZADO: Link para o Gerador de Senhas Interno --- */}
         <div className="mt-6 pt-4 border-t border-gray-700">
-          <a
-            href="https://gerador-de-senha-pi-ruby.vercel.app/"
-            target="_blank" // Abre em nova aba
-            rel="noopener noreferrer" // Segurança para links externos
-            className="block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm text-blue-400 font-medium"
+          <Link
+            to="/senha-forte" // Rota interna para o componente React
             onClick={() => setSidebarOpen(false)} // Fecha sidebar em mobile
+            className="block p-2 rounded hover:bg-[#0d1117] border border-gray-700 text-sm text-blue-400 font-medium"
           >
             🔐 Gerador de Senhas Fortes
-          </a>
+          </Link>
         </div>
-        {/* --- FIM NOVO --- */}
+        {/* --- FIM ATUALIZADO --- */}
 
       </aside>
 

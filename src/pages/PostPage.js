@@ -49,7 +49,7 @@ export default function PostPage() {
       >
         <div className="flex justify-between items-center mb-6">
           <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
-            Rádio.Telecon
+            Rádio.telecom
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -97,7 +97,7 @@ export default function PostPage() {
       <main className={`flex-1 container mx-auto px-4 py-8 md:px-6 max-w-4xl ${sidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>
         <header className="md:hidden mb-6 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
-            Rádio.Telecon
+            Rádio.telecom
           </Link>
           <button
             onClick={() => setSidebarOpen(true)}

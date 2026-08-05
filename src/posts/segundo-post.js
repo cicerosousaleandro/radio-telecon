@@ -58,7 +58,7 @@ export const segundoPost = {
     <p>Manter seu equipamento com firmware atualizado e usar ferramentas oficiais é essencial para garantir segurança, estabilidade e acesso às últimas funcionalidades.</p>
 
     <p class="text-right mt-8 italic text-gray-400">
-      📻 <strong>Rádio.Telecon</strong> — Conteúdo técnico, sem firulas, feito por quem entende de redes e segurança.
+      📻 <strong>Rádio.telecom</strong> — Conteúdo técnico, sem firulas, feito por quem entende de redes e segurança.
     </p>
   `
 };

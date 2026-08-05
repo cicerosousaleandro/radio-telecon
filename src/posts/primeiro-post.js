@@ -85,7 +85,7 @@ export const primeiroPost = {
     Que <strong>redundância não é gasto, é responsabilidade</strong>.<br>
     E que, mesmo nas maiores empresas do mundo, <strong>um único ponto de falha pode desmontar tudo</strong>.</p>
 
-    <p>Para quem trabalha com redes e segurança — como a gente aqui na Rádio.Telecon —, esses apagões não são só notícias.<br>
+    <p>Para quem trabalha com redes e segurança — como a gente aqui na Rádio.telecom —, esses apagões não são só notícias.<br>
     São <strong>lições escritas em tempo real</strong>.</p>
 
     <p>E é por isso que começamos este blog:<br>
@@ -93,8 +93,8 @@ export const primeiroPost = {
 
     <!-- Continue com o resto do texto em HTML -->
     <p class="text-right mt-8 italic text-gray-400">
-      📻 <strong>Esta é a primeira transmissão da Rádio.Telecon</strong> 
-      📻 <strong>Esta é a primeira transmissão da Rádio.Telecon</strong> 
+      📻 <strong>Esta é a primeira transmissão da Rádio.telecom</strong> 
+      📻 <strong>Esta é a primeira transmissão da Rádio.telecom</strong> 
     </p>
   `
 };

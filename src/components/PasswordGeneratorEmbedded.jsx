@@ -69,10 +69,10 @@ export default function PasswordGeneratorEmbedded() {
   }, [length, includeLowercase, includeUppercase, includeNumbers, includeSymbols, generatePassword]);
 
   return (
-    // Este contêiner centraliza o conteúdo e aplica estilos do radio.telecon
+    // Este contêiner centraliza o conteúdo e aplica estilos do radio.telecom
     // ADICIONADO: bg-[#0d1117] para o fundo escuro da página inteira
     <div className="max-w-3xl mx-auto bg-[#0d1117]">
-      {/* Este article aplica o estilo de fundo e borda do radio.telecon */}
+      {/* Este article aplica o estilo de fundo e borda do radio.telecom */}
       <article className="bg-[#161b22] p-6 rounded-lg border border-gray-700">
         {/* Link de Voltar */}
         <Link to="/" className="inline-flex items-center text-blue-400 hover:underline mb-4">
@@ -197,7 +197,7 @@ export default function PasswordGeneratorEmbedded() {
         </main>
 
         {/* Footer - Adaptado do HTML puro */}
-        {/* Opcional: pode remover ou alterar para algo mais integrado ao radio.telecon */}
+        {/* Opcional: pode remover ou alterar para algo mais integrado ao radio.telecom */}
         {/* <footer className="footer text-center mt-6 text-sm text-gray-500">
           <p>Desenvolvido por <a href="https://apresentacao-coral.vercel.app/  " target="_blank" rel="noopener noreferrer" className="text-blue-400">Cícero Jorge</a></p>
         </footer> */}

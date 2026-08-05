@@ -45,6 +45,6 @@ export const terceiroPost = {
 </div>
 
 <p>Até a próxima transmissão!<br>
-📡 <em>Rádio Telecon: onde a tecnologia se conecta com a gente.</em></p>
+📡 <em>Rádio telecom: onde a tecnologia se conecta com a gente.</em></p>
   `.trim(),
 };

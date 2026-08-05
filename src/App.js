@@ -43,7 +43,7 @@ function App() {
       >
         <div className="flex justify-between items-center mb-6">
           <Link to="/" className="text-xl font-bold text-blue-400 hover:text-blue-300 transition">
-            Rádio.Telecon
+            Rádio.telecom
           </Link>
           <button
             onClick={() => setSidebarOpen(false)}
@@ -91,7 +91,7 @@ function App() {
         {/* Cabeçalho com botão hamburguer (só em mobile) */}
         <header className="md:hidden mb-6 flex justify-between items-center">
           <Link to="/" className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">
-            Rádio.Telecon
+            Rádio.telecom
           </Link>
           <button
             onClick={() => setSidebarOpen(true)}
@@ -126,10 +126,10 @@ function App() {
           </div>
         </div>
 
-        {/* Descrição da Rádio.Telecon */}
+        {/* Descrição da Rádio.telecom */}
         <article className="bg-[#161b22] p-6 rounded-lg border border-gray-700">
           <h1 className="text-2xl md:text-3xl font-bold text-blue-300 mb-4">
-            Bem-vindo à Rádio.Telecon
+            Bem-vindo à Rádio.telecom
           </h1>
           <p className="mb-4">
             Este é um espaço criado por quem entende de redes e segurança da informação — e quer compartilhar conhecimento sem firulas, com foco no que realmente importa.
